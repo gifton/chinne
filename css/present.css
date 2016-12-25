@@ -1,0 +1,315 @@
+body{
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 100vh;
+  background-color: #468263;
+  margin: 0;
+  font-family: MV Boli,sans-serif;
+}
+
+/** BOX **/
+.box_area{
+    position: absolute;
+    top: calc(50% - 100px);
+    left: calc(50% - 120px);
+    width: 400px;
+    height: 300px;
+    -webkit-perspective: 300px; -moz-perspective: 300px; -o-perspective: 300px; perspective: 300px; 
+    perspective-origin: 50% 50%;
+    cursor: pointer;
+}
+
+.box_area .top_cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    box-sizing: border-box;
+    -webkit-transform-style: preserve-3d; -moz-transform-style: preserve-3d; -o-transform-style: preserve-3d; transform-style: preserve-3d;
+    z-index: 3;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.box_area .top_cover figure{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid #E68250;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.box_area .top_cover .front_cover {
+    background-color: #FF9966;
+}
+.box_area .top_cover .back_cover {
+    background-color: #FF9966;
+    transform: rotateY( 180deg );
+}
+
+.box_area .bottom_cover{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: #FF9966;
+    border: 1px solid #E68250;
+    box-sizing: border-box;
+    -webkit-transform-style: preserve-3d; -moz-transform-style: preserve-3d; -o-transform-style: preserve-3d; transform-style: preserve-3d;
+    z-index: 3;
+}
+
+.box_area .left_cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 100%;
+    background-color: #FF9966;
+    border: 1px solid #E68250;
+    box-sizing: border-box;
+    -webkit-transform-style: preserve-3d; -moz-transform-style: preserve-3d; -o-transform-style: preserve-3d; transform-style: preserve-3d;
+    z-index: 2;
+}
+
+.box_area .right_cover{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 100%;
+    background-color: #FF9966;
+    border: 1px solid #E68250;
+    box-sizing: border-box;
+    -webkit-transform-style: preserve-3d; -moz-transform-style: preserve-3d; -o-transform-style: preserve-3d; transform-style: preserve-3d;
+    z-index: 2;
+}
+
+.box_area .zeal{
+    position: absolute;
+    top: calc(50% - 8px);
+    left: 0;
+    width: 100%;
+    height: 16px;
+    background-color: #FFFFFF;
+    opacity: 0.5;
+    z-index: 3;
+}
+
+.box_area .label_in_cover{
+    position: relative;
+    float: left;
+    width: 80%;
+    height: auto;
+    margin: 15px 10% 0;
+    padding: 2px 0;
+    background-color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    color: #232323;
+    cursor: pointer;
+}
+
+.box_area:hover .label_in_cover{
+    text-decoration: underline;
+    color: #731509;
+}
+
+.box_area .label_in_cover::before{
+    position: absolute;
+    top: -8px;
+    left: -4px;
+    width: 100%;
+    height: 16px;
+    content: "";
+    background-color: #FFFFFF;
+    opacity: 0.5;
+    padding: 0 4px;
+}
+
+.box_area .label_in_cover::after{
+    position: absolute;
+    bottom: -8px;
+    left: -4px;
+    width: 100%;
+    height: 16px;
+    content: "";
+    background-color: #FFFFFF;
+    opacity: 0.5;
+    padding: 0 4px;
+}
+
+.box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.box > figure {
+  display: block;
+  position: absolute;
+  border: 2px solid #A03C0A;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.box .front,
+.box .back {
+  width: 300px;
+  height: 200px;
+}
+
+.box .right,
+.box .left {
+  width: 100px;
+  height: 200px;
+  left: 100px;
+}
+
+.box .top,
+.box .bottom {
+  width: 300px;
+  height: 100px;
+  top: 50px;
+}
+
+.box .front  {transform: rotateY(   0deg ) translateZ( 50px ); border: 2px solid #FF9966; z-index: 3;}
+.box .back   { transform: rotateX( 180deg ) translateZ( 50px ); background-color: #B4501E; z-index: 1;}
+.box .right  { transform: rotateY(  90deg ) translateZ( 150px ); background: linear-gradient(to right, #DC7846 , #B4501E); z-index: 2;}
+.box .left   { transform: rotateY( -90deg ) translateZ( 150px ); background: linear-gradient(to left, #DC7846 , #B4501E); z-index: 2;}
+.box .top    { transform: rotateX(  90deg ) translateZ( 100px ); background: linear-gradient(to top, #DC7846 , #B4501E); z-index: 2;}
+.box .bottom { transform: rotateX( -90deg ) translateZ( 100px ); background: linear-gradient(to bottom, #DC7846 , #B4501E); z-index: 2;}
+
+.remove_zeal{
+    -webkit-animation: remove_zeal 1000ms linear forwards;
+    -moz-animation: remove_zeal 1000ms linear forwards;
+    animation: remove_zeal 1000ms linear forwards;
+}
+
+@-webkit-keyframes remove_zeal{
+    from {opacity: 0.5;}
+    to {opacity: 0;}
+}
+
+@-moz-keyframes remove_zeal{
+    from {opacity: 0.5;}
+    to {opacity: 0;}
+}
+
+@keyframes remove_zeal{
+    from {opacity: 0.5;}
+    to {opacity: 0;}
+}                   
+
+.open_top_cover{
+    -webkit-animation: open_top_cover 1000ms linear forwards;
+    -moz-animation: open_top_cover 1000ms linear forwards;
+    animation: open_top_cover 1000ms linear forwards;
+}
+
+@-webkit-keyframes open_top_cover{
+    from {transform-origin: 50% top; transform: perspective(600px) rotateX(0);}
+    to {transform-origin: 50% top; transform: perspective(600px) rotateX(220deg);}
+}
+
+@-moz-keyframes open_top_cover{
+    from {transform-origin: 50% top; transform: perspective(600px) rotateX(0);}
+    to {transform-origin: 50% top; transform: perspective(600px) rotateX(220deg);}
+}
+
+@keyframes open_top_cover{
+    from {transform-origin: 50% top; transform: perspective(600px) rotateX(0);}
+    to {transform-origin: 50% top; transform: perspective(600px) rotateX(220deg);}
+}
+
+.open_bottom_cover{
+    -webkit-animation: open_bottom_cover 1000ms linear forwards;
+    -moz-animation: open_bottom_cover 1000ms linear forwards;
+    animation: open_bottom_cover 1000ms linear forwards;
+}
+
+@-webkit-keyframes open_bottom_cover{
+    from {transform-origin: 50% bottom; transform: perspective(600px) rotateX(0);}
+    to {transform-origin: 50% bottom; transform: perspective(600px) rotateX(-220deg);}
+}
+
+@-moz-keyframes open_bottom_cover{
+    from {transform-origin: 50% bottom; transform: perspective(600px) rotateX(0);}
+    to {transform-origin: 50% bottom; transform: perspective(600px) rotateX(-220deg);}
+}
+
+@keyframes open_bottom_cover{
+    from {transform-origin: 50% bottom; transform: perspective(600px) rotateX(0);}
+    to {transform-origin: 50% bottom; transform: perspective(600px) rotateX(-220deg);}
+}
+
+.open_left_cover{
+    -webkit-animation: open_left_cover 1000ms linear forwards;
+    -moz-animation: open_left_cover 1000ms linear forwards;
+    animation: open_left_cover 1000ms linear forwards;
+}
+
+@-webkit-keyframes open_left_cover{
+    from {transform-origin: left 50%; transform: perspective(600px) rotateY(0);}
+    to {transform-origin: left 50%; transform: perspective(600px) rotateY(-220deg);}
+}
+
+@-moz-keyframes open_left_cover{
+    from {transform-origin: left 50%; transform: perspective(600px) rotateY(0);}
+    to {transform-origin: left 50%; transform: perspective(600px) rotateY(-220deg);}
+}
+
+@keyframes open_left_cover{
+    from {transform-origin: left 50%; transform: perspective(600px) rotateY(0);}
+    to {transform-origin: left 50%; transform: perspective(600px) rotateY(-220deg);}
+}
+
+.open_right_cover{
+    -webkit-animation: open_right_cover 1000ms linear forwards;
+    -moz-animation: open_right_cover 1000ms linear forwards;
+    animation: open_right_cover 1000ms linear forwards;
+}
+
+@-webkit-keyframes open_right_cover{
+    from {transform-origin: right 50%; transform: perspective(600px) rotateY(0);}
+    to {transform-origin: right 50%; transform: perspective(600px) rotateY(220deg);}
+}
+
+@-moz-keyframes open_right_cover{
+    from {transform-origin: right 50%; transform: perspective(600px) rotateY(0);}
+    to {transform-origin: right 50%; transform: perspective(600px) rotateY(220deg);}
+}
+
+@keyframes open_right_cover{
+    from {transform-origin: right 50%; transform: perspective(600px) rotateY(0);}
+    to {transform-origin: right 50%; transform: perspective(600px) rotateY(220deg);}
+}
+
+a{
+    text-decoration: none;
+}
+
+#package{
+    position: absolute;
+    top: calc(50% - 100px);
+    left: calc(50% - 150px);
+    width: 200px;
+    height: 120px;
+    background-color: #E6E6E6;
+    box-shadow: 3px 4px 6px -3px #000000;
+    transform: rotate(-5deg);
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    color: #232323;
+    font-size: 20px;
+    z-index: 2;
+}
+/** BOX **/
